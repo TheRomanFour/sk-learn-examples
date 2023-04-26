@@ -1,4 +1,4 @@
-# Strojno skripta
+# Sk Learn by examples
 
 ## Image manipulation
 Download image using curl
