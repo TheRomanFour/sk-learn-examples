@@ -1,5 +1,4 @@
-# sk-learn-examples
-
+# Strojno skripta
 
 ## Image manipulation
 Download image using curl
@@ -82,6 +81,23 @@ stupac = baza_sk.feature_names
 plt.title("Graf")
 plt.plot(podaci[:20], label = stupac )
 plt.legend(loc='upper left')
+plt.show()
+```
+
+ROC Analysis
+
+```from sklearn.metrics import roc_auc_score
+from sklearn.metrics import roc_curve
+logit_roc_auc = roc_auc_score(y_test, y_pred_LogR) #površina ispd krivulje
+fpr, tpr, thresholds = roc_curve(y_test, y_pred_LogR)  #crtanje krivulje
+plt.figure()
+plt.plot(fpr, tpr, label='Logistic Regression (area = %0.2f)' % logit_roc_auc)
+plt.plot([0, 1], [0, 1], 'k--') #dijagonala
+plt.axis([0, 1, 0, 1]) #
+plt.xlabel('False Positive Rate = 1- Specificity')
+plt.ylabel('True Positive Rate = Sensitivity')
+plt.title('Receiver operating characteristic')
+plt.legend(loc="lower right")
 plt.show()
 ```
 
@@ -244,4 +260,3 @@ from sklearn.preprocessing import normalize
 X_norm = normalize(X)
 X_norm
 ```
-
